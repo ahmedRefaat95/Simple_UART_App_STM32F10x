@@ -63,7 +63,7 @@ typedef struct {
 }USART_t;
 
 /************************************************************/
-/****************** VARIABLES DEFINITIONS ******************/
+/****************** VARIABLES DEFINITIONS *******************/
 /************************************************************/
 
 /* initializing the GPIO configiration for UART1 Transmitter pin */

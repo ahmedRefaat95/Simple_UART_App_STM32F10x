@@ -26,7 +26,7 @@ extern const led_t LED_leds[LED_NUMBER_OF_LEDS];
 ***************************************************************/
 void hLED_Init(void)
 {
-    uint8_t i;
+    u8 i;
     for(i=0; i<LED_NUMBER_OF_LEDS; i++)
     {   
         if(PORTA == LED_leds[i].GPIO[i]->port)
@@ -58,9 +58,9 @@ void hLED_Init(void)
  *                 OK : if the function is executed correctly
  *                 NOT_OK : if the function is not executed correctly
  ************************************************************************/
-STD_ERROR hLED_ON(uint8_t LED_Ch)
+STD_ERROR hLED_ON(u8 LED_Ch)
 {
-    uint8_t Local_ErrSt = OK;
+    u8 Local_ErrSt = OK;
     if (NULL == LED_leds[LED_Ch].GPIO[LED_Ch])
     {
         Local_ErrSt = NOT_OK;
@@ -83,9 +83,9 @@ STD_ERROR hLED_ON(uint8_t LED_Ch)
  *                 OK : if the function is executed correctly
  *                 NOT_OK : if the function is not executed correctly
  *********************************************************************************************/
-STD_ERROR hLED_OFF(uint8_t LED_Ch)
+STD_ERROR hLED_OFF(u8 LED_Ch)
 {
-    uint8_t Local_ErrSt = OK;
+    u8 Local_ErrSt = OK;
     if (NULL == LED_leds[LED_Ch].GPIO[LED_Ch])
     {
         Local_ErrSt = NOT_OK;

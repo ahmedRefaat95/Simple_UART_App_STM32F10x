@@ -12,7 +12,7 @@
 #include "RCC_interface.h"
 #include "hSwitch.h"
 
-uint8_t Switch_Status[SWITCH_NUMBER_OF_SWITCHES];
+u8 Switch_Status[SWITCH_NUMBER_OF_SWITCHES];
 
 extern const switch_t Switch_switches[SWITCH_NUMBER_OF_SWITCHES];
 /*****************************************************************
@@ -25,7 +25,7 @@ extern const switch_t Switch_switches[SWITCH_NUMBER_OF_SWITCHES];
  *****************************************************************/
 void hSwitch_Init(void)
 {
-    uint8_t i;
+    u8 i;
     for(i=0; i<SWITCH_NUMBER_OF_SWITCHES; i++)
     {
         if(PORTA == Switch_switches[i].GPIO[i]->port)
@@ -67,10 +67,10 @@ void hSwitch_Init(void)
  *                 OK : if the function is executed correctly
  *                 NOT_OK : if the function is not executed correctly
  ***************************************************************************/
-STD_ERROR hSwitch_ReadStatus(uint8_t Switch_Ch, uint8_t* reading)
+STD_ERROR hSwitch_ReadStatus(u8 Switch_Ch, u8* reading)
 {
-    uint8_t Local_read=0;
-    uint8_t Local_ErrStat =OK;
+    u8 Local_read=0;
+    u8 Local_ErrStat =OK;
 	if(NULL==reading)
 	{
 		Local_ErrStat = NOT_OK;
@@ -84,8 +84,8 @@ STD_ERROR hSwitch_ReadStatus(uint8_t Switch_Ch, uint8_t* reading)
 
 void hSwitch_DebounceTask(void)
 {
-	uint8_t i=0, Current_Status;
-	static uint8_t Prev_Status=0, Switch_debCount=0;
+	u8 i=0, Current_Status;
+	static u8 Prev_Status=0, Switch_debCount=0;
 	for(i=0;i<SWITCH_NUMBER_OF_SWITCHES; i++)
 	{
 		GPIO_GetPinVal(Switch_switches[Switch_Ch].GPIO[Switch_Ch]->port,Switch_switches[Switch_Ch].GPIO[Switch_Ch]->pin, &Current_Status);

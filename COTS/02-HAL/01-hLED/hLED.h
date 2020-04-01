@@ -24,12 +24,12 @@
 typedef struct
 {
 	GPIO_t * GPIO[ LED_NUMBER_OF_LEDS ];
-    uint8_t ActiveState;
+    u8 ActiveState;
 } led_t;
 
 void hLED_Init (void);
-STD_ERROR hLED_ON (uint8_t LED_Ch);
-STD_ERROR hLED_OFF(uint8_t LED_Ch);
+STD_ERROR hLED_ON (u8 LED_Ch);
+STD_ERROR hLED_OFF(u8 LED_Ch);
 
 
 #endif

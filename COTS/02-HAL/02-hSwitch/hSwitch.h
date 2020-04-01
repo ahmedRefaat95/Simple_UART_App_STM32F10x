@@ -24,7 +24,7 @@
 typedef struct
 {
 	GPIO_t * GPIO[SWITCH_NUMBER_OF_SWITCHES];
-	uint8_t activeState;
+	u8 activeState;
 }switch_t;
 
 
@@ -53,6 +53,6 @@ void hSwitch_Init(void);
  *                 OK : if the function is executed correctly
  *                 NOT_OK : if the function is not executed correctly
  ***************************************************************************/
-STD_ERROR hSwitch_ReadStatus(uint8_t Switch_Ch, uint8_t* reading);
+STD_ERROR hSwitch_ReadStatus(u8 Switch_Ch, u8* reading);
 
 #endif
